@@ -1,0 +1,33 @@
+DE and editors
+*~
+.idea
+nbproject
+eclipse
+document
+.amateras
+.settings
+.classpath
+.project
+*.iml
+*.ipr
+*.iws
+.pydevproject
+.DS_Store
+
+# play created logs and test results
+tmp
+test-result
+logs
+
+# japid created java files
+conf/japid*
+app/japidviews/*/*.java
+app/japidviews/*/*/*.java
+app/japidviews/*/*/*/*.java
+!app/japidviews/_javatags/*.java
+
+# everyone should keep their own conf files
+conf/application.conf
+cobertura.*
+commit.txt
+~                   
