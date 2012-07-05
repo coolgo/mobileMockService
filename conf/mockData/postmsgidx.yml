@@ -1,0 +1,29 @@
+PostMsgIdx(pmi1):
+    groupCode : "connection"
+    name : "联系人"
+    newcount : 1
+    detailUrl : "/connection/notsure"
+    
+PostMsgIdx(pmi2):
+    groupCode : "assignment"
+    name : "作业"
+    newcount : 4
+    detailUrl : "/connection/notsure"
+    
+PostMsgIdx(pmi3):
+    groupCode : "calendar"
+    name : "日立事件"
+    newcount : 0
+    detailUrl : "/connection/notsure"
+    
+PostMsgIdx(pmi4):
+    groupCode : "information"
+    name : "消息"
+    newcount : 0
+    detailUrl : "/connection/notsure"
+    
+PostMsgIdx(pmi5):
+    groupCode : "message"
+    name : "私信"
+    newcount : 0
+    detailUrl : "/connection/notsure"

@@ -1,0 +1,14 @@
+`import com.google.gson.Gson
+`import play.db.jpa.Model
+`extends "SampleLayout.html"
+
+`(List<Model> findAll)
+
+`set title:"member data list" 
+
+<a href="/">back to init db page.</a>
+member table record count: ${findAll.size()}<br>
+`for Model m:findAll
+	${new Gson().toJson(m)}
+	<br>
+`

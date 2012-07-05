@@ -1,0 +1,30 @@
+`extends "SampleLayout.html"
+
+`(String errinfo, List<String> loadedYml)
+
+`set title:"initdb" 
+<script>
+
+function initdbClick(){
+	window.location.href="/Application/fillData?clean=true";
+}
+
+function cleardb(){
+	window.location.href="/Application/clearDb";
+}
+
+</script>
+${errinfo ?: ""}
+<button onclick="initdbClick()">init db</button>
+<button onclick="cleardb()">clear db</button>
+<a target="_blank" href="/Application/mockservice">测试mock服务</a>
+<p>
+`for String f : loadedYml
+	${f}
+	`t SampleTag(f) 
+	<br>
+`
+</p>
+
+
+

@@ -1,0 +1,8 @@
+IClassQuiz(xlei1):
+    examinee : "张小雨"
+    content : "和你说件事"
+    replyCount : 1
+    examineeAvatar : "http://www.iclass.com/img/avatar/abc.png"
+    endTime: "5秒之前"
+    isNew : true
+    genericGroup: "iclass test"

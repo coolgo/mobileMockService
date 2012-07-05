@@ -1,0 +1,14 @@
+`import org.apache.commons.lang.StringUtils
+`args String a
+
+<script>
+function viewMemberClick(methodname){
+	//alert("/RecorderController/"+ methodname);
+	window.location.href="/RecorderController/"+ methodname;
+}
+</script>
+`String ymalMainFileName = StringUtils.substring(a, 0, a.lastIndexOf("."));
+<button onclick="viewMemberClick('${ymalMainFileName}')">${a}</button>
+
+
+
