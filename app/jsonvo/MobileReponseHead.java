@@ -1,13 +1,13 @@
 package jsonvo;
 
 
-public class ReponseHead {
+public class MobileReponseHead {
 	
     public boolean success;
     public String msgInfo;
     
     
-	public ReponseHead () {
+	public MobileReponseHead () {
 		
 	}	
     

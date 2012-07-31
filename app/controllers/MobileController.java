@@ -3,7 +3,7 @@ package controllers;
 import java.io.File;
 import java.util.List;
 
-import jsonvo.Response;
+import jsonvo.MobileResponse;
 import models.IClassMsg;
 import models.Member;
 import models.PostMsgIdx;
@@ -18,26 +18,26 @@ public class MobileController extends JapidController {
 	public static void login(String uname, String pwd, Boolean keep,
 			String forwordUrl) {
 		Member first = Member.find("fullName=?", uname).first();
-		Response reponse = null;
+		MobileResponse reponse = null;
 		if (first != null) {
-			reponse = Response.createSucc();
+			reponse = MobileResponse.createSucc();
 			reponse.result.put("currentUser", first);
 		} else {
-			reponse = Response.createFail("用户名或密码错误");
+			reponse = MobileResponse.createFail("用户名或密码错误");
 		}
 		renderJSON(reponse);
 	}
 
 	public static void newmsgidx(Long uid, String pwd) {
 		List<GenericModel> findAll = PostMsgIdx.findAll();
-		Response reponse = Response.createSucc();
+		MobileResponse reponse = MobileResponse.createSucc();
 		reponse.result.put("typeList", findAll);
 		renderJSON(reponse);
 	}
 
 	public static void message() {
 		List<GenericModel> findAll = IClassMsg.findAll();
-		Response reponse = Response.createSucc();
+		MobileResponse reponse = MobileResponse.createSucc();
 		reponse.result.put("typeList", findAll);
 		renderJSON(reponse);
 	}
