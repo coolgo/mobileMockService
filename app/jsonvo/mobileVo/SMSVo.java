@@ -75,6 +75,14 @@ public class SMSVo extends BaseMobileVo {
 		vo.isNew = true;
 		smsVos.add(vo);
 
+		// 006
+		vo = new SMSVo("SMSReply", "coolgo5", "(penpn)", 106,
+				"http://www.iclass.com/public/img/defaultAvatar/sec_ava2.png",
+				"", "yes ,i got it", "16:50");
+		vo.id = 006;
+		vo.isNew = true;
+		smsVos.add(vo);
+
 		return smsVos;
 	}
 }
