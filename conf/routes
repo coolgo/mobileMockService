@@ -12,7 +12,7 @@ GET     /                                       Application.index
 GET     /public/                                staticDir:public
 
 #sms mobile service
-*       /m/sms/{action}/{name}/{gid}/{mid}/{pno}/{psize}      MobileSMSController.{action}
+*       /m/sms/{action}/{name}/{gid}/{mid}      MobileSMSController.{action}
 *		/m/{action}								MobileController.{action}	
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}
