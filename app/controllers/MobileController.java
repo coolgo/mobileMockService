@@ -7,6 +7,7 @@ import jsonvo.MobileResponse;
 import models.IClassMsg;
 import models.Member;
 import models.PostMsgIdx;
+import models.RichPost;
 
 import org.apache.commons.io.FileUtils;
 
@@ -57,6 +58,14 @@ public class MobileController extends JapidController {
 			System.out.println("can not get file argument.");
 		}
 
+	}
+
+	public static void richpostlist() {
+		System.out.println("richpostlist be invoke");
+		List<RichPost> plist = RichPost.findAll();
+		MobileResponse response = MobileResponse.createSucc();
+		response.result.put("postList", plist);
+		renderJSON(response);
 	}
 
 }
