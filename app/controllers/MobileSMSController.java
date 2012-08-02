@@ -30,6 +30,6 @@ public class MobileSMSController extends JapidController {
 	}
 
 	public static void getSMSList(Long mid, Long lasUpdateTime, Long psize) {
-
+		// hello i am marco.
 	}
 }
