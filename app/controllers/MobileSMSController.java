@@ -28,4 +28,8 @@ public class MobileSMSController extends JapidController {
 		mobileResponse.result.put("listCount", smsList.size());
 		renderJSON(mobileResponse);
 	}
+
+	public static void getSMSList(Long mid, Long lasUpdateTime, Long psize) {
+
+	}
 }
