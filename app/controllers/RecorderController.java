@@ -6,6 +6,8 @@ import models.IClassMsg;
 import models.IClassQuiz;
 import models.Member;
 import models.PostMsgIdx;
+import models.RichPost;
+import models.SMS;
 import play.db.jpa.GenericModel;
 import cn.bran.play.JapidController;
 
@@ -30,6 +32,16 @@ public class RecorderController extends JapidController {
 
 	public static void quiz() {
 		List<GenericModel> findAll = IClassQuiz.findAll();
+		renderJapidWith(detailPage, findAll);
+	}
+
+	public static void richpost() {
+		List<RichPost> findAll = RichPost.findAll();
+		renderJapidWith(detailPage, findAll);
+	}
+
+	public static void sms() {
+		List<GenericModel> findAll = SMS.findAll();
 		renderJapidWith(detailPage, findAll);
 	}
 
