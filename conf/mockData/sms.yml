@@ -6,7 +6,7 @@ SMS(sms1):
    avatar: http://www.iclass.com/public/img/defaultAvatar/fir_ava1.png
    receivers: the members of coolgo family
    content: are you erveryone is here?
-   sendTime: 3 hours ago
+   sendTime: "2013-02-02 00:01"
 
 SMS(sms2):
   smsType: SMSReply 
@@ -16,7 +16,7 @@ SMS(sms2):
   avatar: http://www.iclass.com/public/img/defaultAvatar/fir_ava2.png
   receivers: ""
   content: "yes, i am very ok"
-  sendTime: 2 hours ago
+  sendTime: "2012-03-02 30:01"
   
 SMS(sms3):
    smsType: SMSReply     
@@ -26,7 +26,7 @@ SMS(sms3):
    avatar: http://www.iclass.com/public/img/defaultAvatar/fir_ava3.png
    receivers: ""
    content: "ok ,i got it"
-   sendTime: 1 hours ago  
+   sendTime: "2012-04-02 00:01" 
 
 
 SMS(sms4):
@@ -37,7 +37,7 @@ SMS(sms4):
    avatar: http://www.iclass.com/public/img/defaultAvatar/fir_ava4.png
    receivers: ""
    content: "所以，上面的那个程序为什么会输入8个，这是因为printf语句，我们知道，的概念，所谓块设备，就是以一块一块的数据存取的设备，字符设备是一次存取一个字符的设备。磁盘、内"
-   sendTime: 50 min ago
+   sendTime: "2012-05-02 00:01"
 
 SMS(sms5):
    smsType: SMSReply
@@ -47,7 +47,7 @@ SMS(sms5):
    avatar: http://www.iclass.com/public/img/defaultAvatar/fir_ava5.png
    receivers: ""
    content: "需要注意的是，标准输出是行缓冲，所以遇到“\n”的时候会刷出缓冲区，但对于磁盘这个块设备来,fuck you"
-   sendTime: 30 min ago
+   sendTime: "2012-06-02 00:01"
 
 SMS(sms6):
    smsType: SMSReply
@@ -57,4 +57,4 @@ SMS(sms6):
    avatar: http://www.iclass.com/public/img/defaultAvatar/fir_ava6.png
    receivers: ""
    content: "hehe"
-   sendTime: 3s ago   
+   sendTime: "2012-07-02 00:01"  
