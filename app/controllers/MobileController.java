@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.List;
 
 import jsonvo.MobileResponse;
+import jsonvo.mobileVo.ReciverVo;
 import models.IClassMsg;
 import models.Member;
 import models.PostMsgIdx;
@@ -65,6 +66,13 @@ public class MobileController extends JapidController {
 		List<RichPost> plist = RichPost.findAll();
 		MobileResponse response = MobileResponse.createSucc();
 		response.result.put("postList", plist);
+		renderJSON(response);
+	}
+
+	public static void linkman() {
+		List<ReciverVo> result = ReciverVo.createTestData();
+		MobileResponse response = MobileResponse.createSucc();
+		response.result.put("groupList", result);
 		renderJSON(response);
 	}
 
