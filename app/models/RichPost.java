@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 
 import play.db.jpa.Model;
 
+// add something for test git commit.
 @Entity
 public class RichPost extends Model {
 	public String postType;
