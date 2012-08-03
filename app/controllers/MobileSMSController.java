@@ -29,7 +29,14 @@ public class MobileSMSController extends JapidController {
 		renderJSON(mobileResponse);
 	}
 
-	public static void getSMSList(Long mid, Long lasUpdateTime, Long psize) {
-		// hello i am marco.
+	public static void getSMSList(String uid, Long lastRefreshTimestamp,
+			Integer pno, Integer psize) {
+		Date lastRefreshDate = new Date(lastRefreshTimestamp);
+		List<SMS> smsList = SMS.fetchSMSList(lastRefreshDate, pno, psize);
+		MobileResponse mobileResponse = MobileResponse.createSucc();
+		mobileResponse.result.put("smsList", smsList);
+		mobileResponse.result.put("listCount", smsList.size());
+		renderJSON(mobileResponse);
+
 	}
 }
