@@ -44,5 +44,4 @@ public class RecorderController extends JapidController {
 		List<GenericModel> findAll = SMS.findAll();
 		renderJapidWith(detailPage, findAll);
 	}
-
 }
