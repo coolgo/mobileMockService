@@ -1,6 +1,9 @@
 package models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 import play.db.jpa.Model;
 
@@ -19,5 +22,8 @@ public class RichPost extends Model {
 	public Long replyCount;
 	public String postTime;
 	public Long postTimeNumberValue;
+
+	@OneToMany(mappedBy = "topic")
+	public List<RichPostReply> replyList;
 
 }

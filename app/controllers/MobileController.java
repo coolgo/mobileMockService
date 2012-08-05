@@ -9,10 +9,12 @@ import models.IClassMsg;
 import models.Member;
 import models.PostMsgIdx;
 import models.RichPost;
+import models.RichPostReply;
 
 import org.apache.commons.io.FileUtils;
 
 import play.db.jpa.GenericModel;
+import utils.gson.ReplyGsonSerializer;
 import cn.bran.play.JapidController;
 
 public class MobileController extends JapidController {
@@ -66,14 +68,24 @@ public class MobileController extends JapidController {
 		List<RichPost> plist = RichPost.findAll();
 		MobileResponse response = MobileResponse.createSucc();
 		response.result.put("postList", plist);
-		renderJSON(response);
+		renderJSON(response, new ReplyGsonSerializer());
 	}
 
-	public static void linkman() {
+	public static void linkman(Long uid) {
+		System.out.println("linkman be invoke, uid=" + uid);
 		List<ReciverVo> result = ReciverVo.createTestData();
 		MobileResponse response = MobileResponse.createSucc();
 		response.result.put("groupList", result);
 		renderJSON(response);
+	}
+
+	public static void richpostreplys() {
+		RichPost r = RichPost.find("poster='客服cic'").first();
+		List<RichPostReply> replys = RichPostReply.find("topic=?", r).fetch();
+
+		MobileResponse response = MobileResponse.createSucc();
+		response.result.put("replys", replys);
+		renderJSON(response, new ReplyGsonSerializer());
 	}
 
 }
