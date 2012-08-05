@@ -6,7 +6,7 @@ SMS(sms1):
    avatar: http://www.iclass.com/public/img/defaultAvatar/fir_ava1.png
    receivers: the members of coolgo family
    content: are you erveryone is here?
-   sendTime: "2013-02-02 00:01"
+   sendTime: "2012-01-02 00:01"
 
 SMS(sms2):
   smsType: SMSReply 

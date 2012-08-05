@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import jsonvo.MobileResponse;
+import jsonvo.mobileVo.SMSVo;
 import models.SMS;
 import cn.bran.play.JapidController;
 
@@ -29,14 +30,14 @@ public class MobileSMSController extends JapidController {
 		renderJSON(mobileResponse);
 	}
 
-	public static void getSMSList(String uid, Long lastRefreshTimestamp,
-			Integer pno, Integer psize) {
-		Date lastRefreshDate = new Date(lastRefreshTimestamp);
-		List<SMS> smsList = SMS.fetchSMSList(lastRefreshDate, pno, psize);
+	public static void getSMSList(String uid, Long beginTimestamp, Integer pno,
+			Integer psize) {
+		Date beginDate = new Date(beginTimestamp);
+		List<SMS> smsList = SMS.fetchSMSListIgnorePno(beginDate, psize);
+		List<SMSVo> smsVoList = SMSVo.getSMSVosFromSMSList(smsList);
 		MobileResponse mobileResponse = MobileResponse.createSucc();
-		mobileResponse.result.put("smsList", smsList);
-		mobileResponse.result.put("listCount", smsList.size());
+		mobileResponse.result.put("smsList", smsVoList);
+		mobileResponse.result.put("listCount", smsVoList.size());
 		renderJSON(mobileResponse);
-
 	}
 }
