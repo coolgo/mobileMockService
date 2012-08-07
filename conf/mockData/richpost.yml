@@ -1,32 +1,47 @@
-RichPost(rp1) :
-    postType : "PostMessage"
-    poster :  "客服cic"
-    posterId : 252
-    avatar : "http://www.iclass.com/public/img/defaultAvatar/sec_ava1.png"
-    receivers : "爱班网交流群"
-    content : "爱班网#今晚20：00更新，持续时间30分钟。本次更新为修正性更新，主要解决保持登录功能不正常的问题，此外还修正了部分提示在输入正确内容后仍然不消失的问题。"
-    replyCount : 0
-    postTime : "21小时前"
-    postTimeNumberValue : 1327915940099
-
-RichPost(rp2) : 
+RichPost(29144) :
     postType : "PostPhoto"
     poster : "忻海"
-    posterId : 253
+    posterId : 30
     avatar : "http://www.iclass.com/picserver/20120528-122953805.jpg"
-    receivers : "爱班公司内部职员群,爱班网交流群"
-    content : "上周2012.07.23-2012.07.27工作总结，请大家参考。"
-    imageUrl : "http://www.iclass.com/picserver/20120730-131703807.jpg"
-    imageW : 1646
-    imageH : 765
-    replyCount : 3
-    postTime : "1天前"
-    postTimeNumberValue : 1327900628044
+    receivers : "爱班公司内部职员群"
+    content : "上周2012.06.04-2012.06.08工作总结，请大家参考。 "
+    replyCount : -1
+    postTime : "2012-06-11"
+    postTimeNumberValue : 1339391029576
+    imageUrl : "http://www.iclass.com/picserver/20120611-130344629.jpg"
 
-RichPostReply(r1):
-    replyer : "蔡文亭"
-    avatar : "http://www.iclass.com/public/img/defaultAvatar/sec_ava6.png"
-    content : "欢迎投放各类广告"
-    replyTime : "2周前"
-    replyTimeNumberValue : 1327856628044
-    topic : rp1
+RichPost(29108) :
+    postType : "PostPhoto"
+    poster : "陈岑"
+    posterId : 649
+    avatar : "/public/img/defaultAvatar/sec_ava1.png"
+    receivers : "爱班网交流群"
+    content : "#爱班网#大多数妈妈在教育男孩的时候，都会采取吼叫的方式，一是源于说话习惯，二是追求震撼性的教育效果。但是，吼叫教育不仅会给男孩带来恐慌，也会严重挫伤他的自尊心，对于男孩的成长与发展没有任何好处。而“不吼不叫”是可以有效激发男孩发挥各种潜力的最佳教育方式,是妈妈必须掌握的教育智慧。"
+    replyCount : -1
+    postTime : "2012-06-11"
+    postTimeNumberValue : 1339383813554
+    imageUrl : "http://www.iclass.com/picserver/20120611-110330412.jpg"
+
+RichPost(29018) :
+    postType : "PostPhoto"
+    poster : "尤靖波"
+    posterId : 860
+    avatar : "/public/img/defaultAvatar/fir_ava10.png"
+    receivers : "测试群组,尤靖波爸爸"
+    content : "2"
+    replyCount : -1
+    postTime : "2012-06-11"
+    postTimeNumberValue : 1339380573761
+    imageUrl : "http://www.iclass.com/picserver/20120611-100902692.jpg"
+
+RichPost(28999) :
+    postType : "PostMessage"
+    poster : "尤靖波"
+    posterId : 860
+    avatar : "/public/img/defaultAvatar/fir_ava10.png"
+    receivers : "测试群组"
+    content : "6月11号啦"
+    replyCount : -1
+    postTime : "2012-06-11"
+    postTimeNumberValue : 1339380415884
+    imageUrl :
