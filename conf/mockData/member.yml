@@ -1,0 +1,19 @@
+Member(m01):
+     fullName: test1
+     username: test1
+     pwd: 123456
+     
+Member(m02):
+    fullName: test2
+    username: test2
+    pwd: 123456
+
+Member(m03):
+    fullName: test3
+    username: test3
+    pwd: 123456
+
+Member(m04):
+    fullName: test4
+    username: test4
+    pwd: 123456              

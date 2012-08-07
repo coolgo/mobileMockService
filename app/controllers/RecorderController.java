@@ -15,9 +15,9 @@ public class RecorderController extends JapidController {
 
 	public static final String detailPage = "RecorderController/mobilemember.html";
 
-	public static void mobilemember() {
+	public static void member() {
 		List<Member> findAll = Member.findAll();
-		renderJapid(findAll);
+		renderJapidWith(detailPage, findAll);
 	}
 
 	public static void postmsgidx() {

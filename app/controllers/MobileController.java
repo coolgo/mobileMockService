@@ -19,16 +19,20 @@ import cn.bran.play.JapidController;
 
 public class MobileController extends JapidController {
 
-	public static void login(String uname, String pwd, Boolean keep,
+	public static void login(String username, String pwd, Integer keep,
 			String forwordUrl) {
-		Member first = Member.find("fullName=?", uname).first();
+
+		Member first = Member.find("username=? and pwd=?", username, pwd)
+				.first();
 		MobileResponse reponse = null;
 		if (first != null) {
 			reponse = MobileResponse.createSucc();
-			reponse.result.put("currentUser", first);
+			reponse.result.put("loginMember", first);
 		} else {
 			reponse = MobileResponse.createFail("用户名或密码错误");
 		}
+		System.out.println("login:----username:" + username + "pwd:" + pwd
+				+ ",response:" + reponse.reponseHead.success);
 		renderJSON(reponse);
 	}
 

@@ -6,8 +6,8 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-
-import org.apache.commons.lang.time.DateFormatUtils;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import play.db.jpa.Model;
 
@@ -20,7 +20,8 @@ public class SMS extends Model {
 	public String avatar;
 	public String receivers;
 	public String content;
-	public Date sendTime;
+	@Temporal(TemporalType.TIMESTAMP)
+	public Date sendTime = new Date();
 
 	@Enumerated(EnumType.STRING)
 	public SMSType smsType;
@@ -30,6 +31,7 @@ public class SMS extends Model {
 	}
 
 	public SMS() {
+
 	}
 
 	public SMS(String sender, String senderTitle, long senderId, String avatar,
@@ -45,18 +47,15 @@ public class SMS extends Model {
 		this.smsType = smsType;
 	}
 
-	public static List<SMS> fetchSMSList(Date beginTime, Integer pno,
+	public static List<SMS> fetchSMSList(Date beginDate, Integer pno,
 			Integer psize) {
 		String hql = "select sms from SMS sms where sendTime<=? ";
-		return SMS.find(hql, beginTime).fetch(pno, psize);
+		return SMS.find(hql, beginDate).fetch(pno, psize);
 	}
 
-	public static void main(String[] args) {
-		Double timeStamp = 1343975712.204834 * 1000;
-		Date date = new Date(1343975712204L);
-		System.out.println("p:" + System.currentTimeMillis() + ",date:" + date
-				+ ",dateString:"
-				+ DateFormatUtils.format(date, "yyyy-MM-dd HH:mm:ss"));
+	public static List<SMS> fetchSMSListIgnorePno(Date beginDate, Integer psize) {
+		String hql = "select sms from SMS sms where sendTime<=?";
+		return SMS.find(hql, beginDate).fetch(psize);
 	}
 
 }
