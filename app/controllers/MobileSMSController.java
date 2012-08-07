@@ -32,6 +32,7 @@ public class MobileSMSController extends JapidController {
 
 	public static void getSMSList(String uid, Long beginTimestamp, Integer pno,
 			Integer psize) {
+		System.out.println("getSMSList,beginDate:" + new Date(beginTimestamp));
 		Date beginDate = new Date(beginTimestamp);
 		List<SMS> smsList = SMS.fetchSMSListIgnorePno(beginDate, psize);
 		List<SMSVo> smsVoList = SMSVo.getSMSVosFromSMSList(smsList);
