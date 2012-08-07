@@ -12,13 +12,14 @@ GET     /                                       Application.index
 GET     /public/                                staticDir:public
 
 #sms mobile service
+POST     /m/sms/getSMSList                                                           MobileSMSController.getSMSList
 GET     /m/sms/getSMSList/{uid}/{beginTimestamp}/{psize}                          MobileSMSController.getSMSList
 GET     /m/sms/getSMSList/{uid}/{beginTimestamp}/{pno}/{psize}                    MobileSMSController.getSMSList
 *       /m/sms/{action}/{name}/{gid}/{mid}                                        MobileSMSController.{action}
 *		/m/linkman/{uid}														  MobileController.linkman
 *		/m/{action}								                                  MobileController.{action}	
 #member
-GET    /m/member/login/{username}/{pwd}/{keep}                                        MobileController.login
+POST    /m/member/login                                                               MobileController.login
 
 # Catch all
 *       /{controller}/{action}                                                    {controller}.{action}
