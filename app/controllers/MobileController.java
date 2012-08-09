@@ -67,7 +67,7 @@ public class MobileController extends JapidController {
 
 	}
 
-	public static void richpostlist(Long lastUpdateTime, Long uid, Long psize) {
+	public static void richpostlist(String lastUpdateTime, Long uid, Long psize) {
 		System.out.println("richpostlist be invoke");
 		System.out.println("lastUpdateTime=" + lastUpdateTime + ", uid=" + uid
 				+ ", psize=" + psize);
