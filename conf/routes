@@ -12,7 +12,7 @@ GET     /                                       Application.index
 GET     /public/                                staticDir:public
 
 #sms mobile service
-POST     /m/sms/getSMSList                                                           MobileSMSController.getSMSList
+POST    /m/sms/getSMSList                                                           MobileSMSController.getSMSList
 GET     /m/sms/getSMSList/{uid}/{beginTimestamp}/{psize}                          MobileSMSController.getSMSList
 GET     /m/sms/getSMSList/{uid}/{beginTimestamp}/{pno}/{psize}                    MobileSMSController.getSMSList
 *       /m/sms/{action}/{name}/{gid}/{mid}                                        MobileSMSController.{action}
