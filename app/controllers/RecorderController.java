@@ -2,8 +2,6 @@ package controllers;
 
 import java.util.List;
 
-import models.IClassMsg;
-import models.IClassQuiz;
 import models.Member;
 import models.PostMsgIdx;
 import models.RichPost;
@@ -22,16 +20,6 @@ public class RecorderController extends JapidController {
 
 	public static void postmsgidx() {
 		List<GenericModel> findAll = PostMsgIdx.findAll();
-		renderJapidWith(detailPage, findAll);
-	}
-
-	public static void message() {
-		List<GenericModel> findAll = IClassMsg.findAll();
-		renderJapidWith(detailPage, findAll);
-	}
-
-	public static void quiz() {
-		List<GenericModel> findAll = IClassQuiz.findAll();
 		renderJapidWith(detailPage, findAll);
 	}
 

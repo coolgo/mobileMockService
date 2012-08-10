@@ -5,7 +5,6 @@ import java.util.List;
 
 import jsonvo.MobileResponse;
 import jsonvo.mobileVo.ReciverVo;
-import models.IClassMsg;
 import models.Member;
 import models.PostMsgIdx;
 import models.RichPost;
@@ -43,13 +42,6 @@ public class MobileController extends JapidController {
 		renderJSON(reponse);
 	}
 
-	public static void message() {
-		List<GenericModel> findAll = IClassMsg.findAll();
-		MobileResponse reponse = MobileResponse.createSucc();
-		reponse.result.put("typeList", findAll);
-		renderJSON(reponse);
-	}
-
 	public static void uploadSound(File file, String otherArg) {
 		if (file != null) {
 			System.out.println("flie name:" + file.getName() + ", file size:"
@@ -64,7 +56,6 @@ public class MobileController extends JapidController {
 		} else {
 			System.out.println("can not get file argument.");
 		}
-
 	}
 
 	public static void richpostlist(String lastUpdateTime, Long uid, Long psize) {
@@ -94,4 +85,19 @@ public class MobileController extends JapidController {
 		renderJSON(response, new ReplyGsonSerializer());
 	}
 
+	public static void uploadtest(File file, String ortherArg) {
+		MobileResponse response = null;
+		if (file != null) {
+			response = MobileResponse.createSucc();
+			String info = "param, file name = " + file.getName()
+					+ ", file size=" + file.length() + ", orther args="
+					+ ortherArg;
+			response.result.put("sysInfo", info);
+			System.out.println(info);
+		} else {
+			response = MobileResponse.createFail("can not get file param");
+			System.out.println("can not get file.");
+		}
+		renderJSON(response);
+	}
 }
