@@ -1,3 +1,4 @@
+#richpost
 RichPost(29144) :
     postType : "PostPhoto"
     poster : "忻海"
@@ -45,3 +46,37 @@ RichPost(28999) :
     postTime : "2012-06-11"
     postTimeNumberValue : 1339380415884
     imageUrl :
+        
+###reply
+RichPostReply(reply1) :
+    replyer: coolgo
+    replyId: 123
+    avatar: http://www.iclass.com/public/img/defaultAvatar/sec_ava4.png
+    content: this is test data
+    replyTime : "2012-06-11"
+    replyTimeNumberValue : 1339380573761
+    topic: 29108
+
+RichPostReply(reply2) :
+    replyer: penpen
+    replyId: 345
+    avatar: http://www.iclass.com/public/img/defaultAvatar/sec_ava9.png
+    content: this is test data
+    replyTime : "2012-06-11"
+    replyTimeNumberValue : 1339380573761
+    topic: 29108 
+    
+##imageforPost
+ImageForPost(img1): 
+   priviewUrl: http://www.iclass.com/picserver/20120809-102121916.png             
+   richPost: 29108
+   
+ImageForPost(img2): 
+   priviewUrl: http://www.iclass.com/public/img/defaultAvatar/fir_ava1.png             
+   richPost: 29108
+
+ImageForPost(img3): 
+   priviewUrl: http://www.iclass.com/public/img/defaultAvatar/fir_ava2.png             
+   richPost: 29108      
+   
+                               

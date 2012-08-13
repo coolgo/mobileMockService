@@ -17,6 +17,7 @@ GET     /m/sms/getSMSList/{uid}/{beginTimestamp}/{psize}                        
 GET     /m/sms/getSMSList/{uid}/{beginTimestamp}/{pno}/{psize}                    MobileSMSController.getSMSList
 *       /m/sms/{action}/{name}/{gid}/{mid}                                        MobileSMSController.{action}
 *		/m/linkman/{uid}														  MobileController.linkman
+*       /m/post                                                                MobilePostController.postDetail
 *		/m/{action}								                                  MobileController.{action}	
 #member
 POST    /m/member/login                                                               MobileController.login

@@ -31,7 +31,7 @@ public class MobileController extends JapidController {
 			reponse = MobileResponse.createFail("用户名或密码错误");
 		}
 		System.out.println("login:----username:" + username + "pwd:" + pwd
-				+ ",response:" + reponse.reponseHead.success);
+				+ ",response:" + reponse.responseHead.success);
 		renderJSON(reponse);
 	}
 
@@ -99,5 +99,20 @@ public class MobileController extends JapidController {
 			System.out.println("can not get file.");
 		}
 		renderJSON(response);
+	}
+
+	public static void replyList(Long postId, Integer page) {
+		MobileResponse mobileResponse = null;
+		page = page != null ? page : 1;
+		RichPost richPost = RichPost.findById(postId);
+		if (null != richPost) {
+			mobileResponse = MobileResponse.createSucc();
+			mobileResponse.result.put("replyList",
+					RichPostReply.find("topic", richPost).fetch());
+		} else {
+			mobileResponse = MobileResponse.createFail("请求的数据出错了");
+		}
+		System.out.println("replyList:" + mobileResponse);
+		renderJSON(mobileResponse);
 	}
 }
