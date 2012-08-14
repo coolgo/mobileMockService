@@ -1,6 +1,7 @@
 package controllers;
 
 import java.io.File;
+import java.util.Date;
 import java.util.List;
 
 import jsonvo.MobileResponse;
@@ -108,16 +109,29 @@ public class MobileController extends JapidController {
 			@As(value = ",") List<Long> memberrecivers) {
 		// print param on console. for test
 		printCreatePostParam(file, senderId, content, grouprecivers,
-				memberrecivers);
+				memberrecivers, type);
 		MobileResponse response = MobileResponse.createSucc();
+		RichPost rp = new RichPost();
+		rp.postTime = "5秒之前";
+		rp.avatar = "http://www.iclass.com/public/img/defaultAvatar/sec_ava11.png";
+		rp.posterId = senderId;
+		rp.receivers = "group:" + grouprecivers + ", member:" + memberrecivers;
+		rp.postType = type;
+		rp.content = content;
+		rp.poster = "tester";
+		// rp.imageUrl = ;
+		rp.replyCount = 0l;
+		rp.postTime = "5秒之前";
+		rp.postTimeNumberValue = new Date().getTime();
+		response.result.put("createdPost", rp);
 		renderJSON(response);
 	}
 
 	private static void printCreatePostParam(File f, Long sid, String c,
-			List<Long> gs, List<Long> ms) {
+			List<Long> gs, List<Long> ms, String type) {
 		String info = (f == null ? "nofile" : f.getName() + ":" + f.length())
 				+ ", sid=" + sid + ", content=" + c + ", groupreciver=" + gs
-				+ ", memberreciver=" + ms;
+				+ ", memberreciver=" + ms + ", type=" + type;
 		System.out.println(info);
 	}
 
