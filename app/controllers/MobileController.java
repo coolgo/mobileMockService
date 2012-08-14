@@ -12,6 +12,7 @@ import models.RichPostReply;
 
 import org.apache.commons.io.FileUtils;
 
+import play.data.binding.As;
 import play.db.jpa.GenericModel;
 import utils.gson.ReplyGsonSerializer;
 import cn.bran.play.JapidController;
@@ -85,6 +86,7 @@ public class MobileController extends JapidController {
 		renderJSON(response, new ReplyGsonSerializer());
 	}
 
+	@Deprecated
 	public static void uploadtest(File file, String ortherArg) {
 		MobileResponse response = null;
 		if (file != null) {
@@ -99,5 +101,23 @@ public class MobileController extends JapidController {
 			System.out.println("can not get file.");
 		}
 		renderJSON(response);
+	}
+
+	public static void createpost(File file, Long senderId, String content,
+			String type, @As(value = ",") List<Long> grouprecivers,
+			@As(value = ",") List<Long> memberrecivers) {
+		// print param on console. for test
+		printCreatePostParam(file, senderId, content, grouprecivers,
+				memberrecivers);
+		MobileResponse response = MobileResponse.createSucc();
+		renderJSON(response);
+	}
+
+	private static void printCreatePostParam(File f, Long sid, String c,
+			List<Long> gs, List<Long> ms) {
+		String info = (f == null ? "nofile" : f.getName() + ":" + f.length())
+				+ ", sid=" + sid + ", content=" + c + ", groupreciver=" + gs
+				+ ", memberreciver=" + ms;
+		System.out.println(info);
 	}
 }
