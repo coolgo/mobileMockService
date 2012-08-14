@@ -1,6 +1,6 @@
 package jsonvo.mobileVo;
 
 public class BaseMobileVo {
-	public long id;
+	public Long id;
 	public boolean isNew;
 }
