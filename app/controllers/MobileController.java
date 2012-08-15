@@ -8,6 +8,7 @@ import jsonvo.MobileResponse;
 import jsonvo.mobileVo.MemberVo;
 import jsonvo.mobileVo.ReciverVo;
 import jsonvo.mobileVo.RichPostVo;
+import jsonvo.mobileVo.RichPostVo.ImageSize;
 import jsonvo.mobileVo.SMSVo;
 import models.Member;
 import models.PostMsgIdx;
@@ -20,6 +21,7 @@ import org.apache.commons.io.FileUtils;
 
 import play.data.binding.As;
 import play.db.jpa.GenericModel;
+import utils.PictureUploadUtil;
 import utils.gson.ReplyGsonSerializer;
 import cn.bran.play.JapidController;
 
@@ -118,8 +120,15 @@ public class MobileController extends JapidController {
 		Member creater = Member.findById(senderId);
 		if (creater != null) {
 			response = MobileResponse.createSucc();
-			RichPost.createRichPost(creater, content, type, grouprecivers,
-					memberrecivers);
+			String fileUrl = null;
+			ImageSize imgSize = null;
+			if (file != null) {
+				fileUrl = PictureUploadUtil.uploadFile(file);
+				imgSize = PictureUploadUtil.getImageSizeFromImage(file);
+			}
+
+			RichPost.createRichPost(creater, fileUrl, imgSize, content, type,
+					grouprecivers, memberrecivers);
 		} else {
 			response = MobileResponse.createFail("你尚未登陆");
 		}

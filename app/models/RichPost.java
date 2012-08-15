@@ -9,6 +9,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import jsonvo.mobileVo.RichPostVo.ImageSize;
 import play.db.jpa.Model;
 
 // add something for test git commit.
@@ -41,10 +42,13 @@ public class RichPost extends Model {
 		return RichPost.find(hql, lastUpdateDate).fetch(psize);
 	}
 
-	public static void createRichPost(Member creater, String content,
-			PostType postType, List<Long> grouprecivers,
-			List<Long> memberrecivers) {
+	public static void createRichPost(Member creater, String fileUrl,
+			ImageSize imgSize, String content, PostType postType,
+			List<Long> grouprecivers, List<Long> memberrecivers) {
 		RichPost rp = new RichPost();
+		rp.imageUrl = fileUrl;
+		rp.imageH = imgSize.hight;
+		rp.imageW = imgSize.width;
 		rp.createTime = new Date();
 		rp.avatar = creater.avatar;
 		rp.posterId = creater.id;

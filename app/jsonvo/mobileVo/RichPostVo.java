@@ -27,8 +27,13 @@ public class RichPostVo extends BaseMobileVo {
 	public List<ReplyVo> replyList;
 
 	public static class ImageSize {
-		int width;
-		int hight;
+		public int width;
+		public int hight;
+
+		public ImageSize() {
+			width = 0;
+			hight = 0;
+		}
 
 		public ImageSize(int w, int h) {
 			width = w;
