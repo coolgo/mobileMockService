@@ -21,7 +21,7 @@ public class SMS extends Model {
 	public String receivers;
 	public String content;
 	@Temporal(TemporalType.TIMESTAMP)
-	public Date sendTime = new Date();
+	public Date createTime = new Date();
 
 	@Enumerated(EnumType.STRING)
 	public SMSType smsType;
@@ -43,18 +43,18 @@ public class SMS extends Model {
 		this.avatar = avatar;
 		this.receivers = receivers;
 		this.content = content;
-		this.sendTime = sendTime;
+		this.createTime = sendTime;
 		this.smsType = smsType;
 	}
 
 	public static List<SMS> fetchSMSList(Date beginDate, Integer pno,
 			Integer psize) {
-		String hql = "select sms from SMS sms where sendTime<=? ";
+		String hql = "select sms from SMS sms where createTime<=? ";
 		return SMS.find(hql, beginDate).fetch(pno, psize);
 	}
 
 	public static List<SMS> fetchSMSListIgnorePno(Date beginDate, Integer psize) {
-		String hql = "select sms from SMS sms where sendTime<=?";
+		String hql = "select sms from SMS sms where createTime<=?";
 		return SMS.find(hql, beginDate).fetch(psize);
 	}
 

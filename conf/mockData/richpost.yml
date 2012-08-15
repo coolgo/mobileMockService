@@ -7,8 +7,7 @@ RichPost(29144) :
     receivers : "爱班公司内部职员群"
     content : "上周2012.06.04-2012.06.08工作总结，请大家参考。 "
     replyCount : -1
-    postTime : "2012-06-11"
-    postTimeNumberValue : 1339391029576
+    createTime : "2012-06-11"
     imageUrl : "http://www.iclass.com/picserver/20120611-130344629.jpg"
     previewWidth : 1649
     preivewHeight : 750
@@ -21,8 +20,7 @@ RichPost(29108) :
     receivers : "爱班网交流群"
     content : "#爱班网#大多数妈妈在教育男孩的时候，都会采取吼叫的方式，一是源于说话习惯，二是追求震撼性的教育效果。但是，吼叫教育不仅会给男孩带来恐慌，也会严重挫伤他的自尊心，对于男孩的成长与发展没有任何好处。而“不吼不叫”是可以有效激发男孩发挥各种潜力的最佳教育方式,是妈妈必须掌握的教育智慧。"
     replyCount : -1
-    postTime : "2012-06-11"
-    postTimeNumberValue : 1339383813554
+    createTime : "2012-06-11"
     imageUrl : "http://www.iclass.com/picserver/20120611-110330412.jpg"
     previewWidth : 774
     preivewHeight : 595
@@ -35,8 +33,7 @@ RichPost(29018) :
     receivers : "测试群组,尤靖波爸爸"
     content : "2"
     replyCount : -1
-    postTime : "2012-06-11"
-    postTimeNumberValue : 1339380573761
+    createTime : "2012-06-11"
     imageUrl : "http://www.iclass.com/picserver/20120611-100902692.jpg"
     previewWidth : 398
     preivewHeight: 818
@@ -49,8 +46,7 @@ RichPost(28999) :
     receivers : "测试群组"
     content : "6月11号啦"
     replyCount : -1
-    postTime : "2012-06-11"
-    postTimeNumberValue : 1339380415884
+    createTime : "2012-06-11"
     imageUrl :
         
 ###reply
@@ -59,8 +55,7 @@ RichPostReply(reply1) :
     replyId: 123
     avatar: http://www.iclass.com/public/img/defaultAvatar/sec_ava4.png
     content: this is test data
-    replyTime : "2012-06-11"
-    replyTimeNumberValue : 1339380573761
+    createTime : "2012-06-11"
     topic: 29108
 
 RichPostReply(reply2) :
@@ -68,21 +63,8 @@ RichPostReply(reply2) :
     replyId: 345
     avatar: http://www.iclass.com/public/img/defaultAvatar/sec_ava9.png
     content: this is test data
-    replyTime : "2012-06-11"
-    replyTimeNumberValue : 1339380573761
+    createTime : "2012-06-11"
     topic: 29108 
-    
-##imageforPost
-ImageForPost(img1): 
-   priviewUrl: http://www.iclass.com/picserver/20120809-102121916.png             
-   richPost: 29108
-   
-ImageForPost(img2): 
-   priviewUrl: http://www.iclass.com/public/img/defaultAvatar/fir_ava1.png             
-   richPost: 29108
-
-ImageForPost(img3): 
-   priviewUrl: http://www.iclass.com/public/img/defaultAvatar/fir_ava2.png             
-   richPost: 29108      
+         
    
                                

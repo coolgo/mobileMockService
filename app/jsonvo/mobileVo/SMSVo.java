@@ -30,8 +30,8 @@ public class SMSVo extends BaseMobileVo {
 		vo.avatar = sms.avatar;
 		vo.receivers = sms.receivers;
 		vo.content = sms.content;
-		vo.sendTime = sms.sendTime.toString();
-		vo.createTimestamp = sms.sendTime.getTime();
+		vo.sendTime = sms.createTime.toString();
+		vo.createTimestamp = sms.createTime.getTime();
 		return vo;
 	}
 
