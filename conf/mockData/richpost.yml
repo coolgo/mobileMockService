@@ -9,8 +9,8 @@ RichPost(29144) :
     replyCount : -1
     createTime : "2012-06-11"
     imageUrl : "http://www.iclass.com/picserver/20120611-130344629.jpg"
-    previewWidth : 1649
-    preivewHeight : 750
+    imageW : 1649
+    imageH : 750
 
 RichPost(29108) :
     postType : "PostPhoto"
@@ -22,8 +22,8 @@ RichPost(29108) :
     replyCount : -1
     createTime : "2012-06-11"
     imageUrl : "http://www.iclass.com/picserver/20120611-110330412.jpg"
-    previewWidth : 774
-    preivewHeight : 595
+    imageW : 774
+    imageH : 595
 
 RichPost(29018) :
     postType : "PostPhoto"
@@ -35,8 +35,8 @@ RichPost(29018) :
     replyCount : -1
     createTime : "2012-06-11"
     imageUrl : "http://www.iclass.com/picserver/20120611-100902692.jpg"
-    previewWidth : 398
-    preivewHeight: 818
+    imageW : 398
+    imageH: 818
 
 RichPost(28999) :
     postType : "PostMessage"
