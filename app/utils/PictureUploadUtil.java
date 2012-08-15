@@ -434,13 +434,18 @@ public class PictureUploadUtil {
 		return size;
 	}
 
-	public static File getPngImageFromFile(File file) {
-		File tempFile = new File(PictureUploadUtil.getTempFileName("temp.png"));
+	public static String uploadFileWithPngImage(File file) {
+		String fileUrl = null;
+		File tempFile = null;
 		try {
+			tempFile = new File(PictureUploadUtil.getTempFileName("temp.png"));
 			FileUtils.copyFile(file, tempFile);
+			fileUrl = uploadFile(tempFile);
 		} catch (IOException e) {
 			Logger.error(e, e.getMessage(), "get pngimage file is wrong");
+		} finally {
+			FileUtils.deleteQuietly(tempFile);
 		}
-		return tempFile;
+		return fileUrl;
 	}
 }

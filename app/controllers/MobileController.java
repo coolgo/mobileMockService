@@ -125,8 +125,7 @@ public class MobileController extends JapidController {
 			ImageSize imgSize = null;
 			if (file != null) {
 
-				fileUrl = PictureUploadUtil.uploadFile(PictureUploadUtil
-						.getPngImageFromFile(file));
+				fileUrl = PictureUploadUtil.uploadFileWithPngImage(file);
 				imgSize = PictureUploadUtil.getImageSizeFromImage(file);
 			}
 
