@@ -37,7 +37,7 @@ public class RichPost extends Model {
 
 	public static List<RichPost> fetchRichPostsForPaging(Long memberId,
 			Date lastUpdateDate, Integer psize) {
-		String hql = "select post  from RichPost post where createTime<=? ";
+		String hql = "select post  from RichPost post where createTime<=? order by createTime desc ";
 		return RichPost.find(hql, lastUpdateDate).fetch(psize);
 	}
 
