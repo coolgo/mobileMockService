@@ -113,6 +113,7 @@ public class MobileController extends JapidController {
 	public static void createPost(File file, Long senderId, String content,
 			PostType type, @As(value = ",") List<Long> grouprecivers,
 			@As(value = ",") List<Long> memberrecivers) {
+		System.out.println("fileName:" + file.getName());
 		// print param on console. for test
 		printCreatePostParam(file, senderId, content, grouprecivers,
 				memberrecivers, type.toString());
@@ -123,7 +124,9 @@ public class MobileController extends JapidController {
 			String fileUrl = null;
 			ImageSize imgSize = null;
 			if (file != null) {
-				fileUrl = PictureUploadUtil.uploadFile(file);
+
+				fileUrl = PictureUploadUtil.uploadFile(PictureUploadUtil
+						.getPngImageFromFile(file));
 				imgSize = PictureUploadUtil.getImageSizeFromImage(file);
 			}
 
