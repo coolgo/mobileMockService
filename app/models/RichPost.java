@@ -14,8 +14,8 @@ public class RichPost extends Model {
 	public String receivers;
 	public String content;
 	public String imageUrl;
-	public Long imageW;
-	public Long imageH;
+	public Long previewWidth;
+	public Long preivewHeight;
 	public Long replyCount;
 	public String postTime;
 	public Long postTimeNumberValue;
