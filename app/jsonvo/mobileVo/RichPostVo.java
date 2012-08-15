@@ -43,6 +43,7 @@ public class RichPostVo extends BaseMobileVo {
 		public static ImageSize getSizeFromImageUrl(String imageUrl) {
 			return new ImageSize(200, 50);
 		}
+
 	}
 
 	public static RichPostVo richPostVoFromRichPost(RichPost post,
@@ -66,9 +67,16 @@ public class RichPostVo extends BaseMobileVo {
 		vo.replyCount = post.replyCount.intValue();
 		vo.imgUrl = post.imageUrl;
 		vo.previewImgUrl = vo.imgUrl;
-		ImageSize imgeSize = ImageSize.getSizeFromImageUrl(vo.previewImgUrl);
-		vo.previewImgHeight = imgeSize.hight;
-		vo.previewImgWidth = imgeSize.width;
+		if (post.imageH != null && post.imageW != null && post.imageH > 0
+				&& post.imageW > 0) {
+			vo.previewImgHeight = post.imageH;
+			vo.previewImgWidth = post.imageW;
+		} else {
+			ImageSize imgeSize = ImageSize
+					.getSizeFromImageUrl(vo.previewImgUrl);
+			vo.previewImgHeight = imgeSize.hight;
+			vo.previewImgWidth = imgeSize.width;
+		}
 		vo.poster = CommonUtils.getPassTime(post.createTime);
 		vo.createTime = post.createTime.getTime();
 		return vo;
