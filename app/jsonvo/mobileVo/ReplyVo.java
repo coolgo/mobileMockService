@@ -18,9 +18,9 @@ public class ReplyVo extends BaseMobileVo {
 	public static ReplyVo replyVoFromRichPostReply(RichPostReply reply) {
 		ReplyVo vo = new ReplyVo();
 		vo.id = reply.id;
-		vo.replyer = reply.replyer;
-		vo.replyerId = reply.replyerId;
-		vo.avatar = reply.avatar;
+		vo.replyer = reply.creater.fullName;
+		vo.replyerId = reply.creater.id;
+		vo.avatar = reply.creater.avatar;
 		vo.content = reply.content;
 		vo.replyTime = CommonUtils.getPassTime(reply.createTime);
 		vo.createTime = reply.createTime.getTime();

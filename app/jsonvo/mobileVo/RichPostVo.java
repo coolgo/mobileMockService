@@ -59,12 +59,12 @@ public class RichPostVo extends BaseMobileVo {
 		RichPostVo vo = new RichPostVo();
 		vo.id = post.id;
 		vo.postType = post.postType.toString();
-		vo.poster = post.poster;
-		vo.posterId = post.posterId;
-		vo.avatar = post.avatar;
+		vo.poster = post.creater.fullName;
+		vo.posterId = post.creater.id;
+		vo.avatar = post.creater.avatar;
 		vo.receivers = post.receivers;
 		vo.content = post.content;
-		vo.replyCount = post.replyCount.intValue();
+		vo.replyCount = RichPostReply.countReplyByPost(post).intValue();
 		vo.imgUrl = post.imageUrl;
 		vo.previewImgUrl = vo.imgUrl;
 		if (post.imageH != null && post.imageW != null && post.imageH > 0

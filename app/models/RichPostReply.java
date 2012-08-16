@@ -13,21 +13,35 @@ import play.db.jpa.Model;
 @Entity
 public class RichPostReply extends Model {
 
-	public String replyer;
-	public Long replyerId;
-	public String avatar;
 	public String content;
 	@Temporal(TemporalType.TIMESTAMP)
 	public Date createTime;
 
 	@ManyToOne
 	public RichPost topic;
+	@ManyToOne
+	public Member creater;
 
 	public RichPostReply() {
 	}
 
 	public static List<RichPost> fetchRichPostHasReply(Long uid, Integer psize) {
-		String hql = "select post from RichPostReply r, RichPost post where post=r.topic group by post order by post.createTime desc ";
+		String hql = "select post from RichPostReply r, RichPost post where post=r.topic  group by post order by post.createTime desc ";
 		return RichPost.find(hql).fetch(psize);
 	}
+
+	public static Long countReplyByPost(RichPost post) {
+		return RichPostReply.count("topic", post);
+	}
+
+	public static void createRichPostReply(Member creater, RichPost richPost,
+			String content) {
+		RichPostReply richPostReply = new RichPostReply();
+		richPostReply.content = content;
+		richPostReply.creater = creater;
+		richPostReply.topic = richPost;
+		richPostReply.createTime = new Date();
+		richPostReply.save();
+	}
+
 }

@@ -7,6 +7,7 @@ import java.util.List;
 import jsonvo.MobileResponse;
 import jsonvo.mobileVo.MemberVo;
 import jsonvo.mobileVo.ReciverVo;
+import jsonvo.mobileVo.ReplyVo;
 import jsonvo.mobileVo.RichPostVo;
 import jsonvo.mobileVo.RichPostVo.ImageSize;
 import jsonvo.mobileVo.SMSVo;
@@ -22,12 +23,11 @@ import org.apache.commons.io.FileUtils;
 import play.data.binding.As;
 import play.db.jpa.GenericModel;
 import utils.PictureUploadUtil;
-import utils.gson.ReplyGsonSerializer;
 import cn.bran.play.JapidController;
 
 public class MobileController extends JapidController {
 
-	private final static int PSIZE = 20;
+	private final static int PSIZE = 5;
 
 	public static void login(String username, String pwd, Integer keep,
 			String forwordUrl) {
@@ -107,13 +107,14 @@ public class MobileController extends JapidController {
 		MobileResponse response = MobileResponse.createSucc();
 		response.result.put("postList",
 				RichPostVo.getRichPostVoListFromRichPosts(plist, 2));
-		renderJSON(response, new ReplyGsonSerializer());
+		renderJSON(response);
 	}
 
 	public static void createPost(File file, Long senderId, String content,
 			PostType type, @As(value = ",") List<Long> grouprecivers,
 			@As(value = ",") List<Long> memberrecivers) {
 		System.out.println("fileName:" + file.getName());
+		long beginTime = System.currentTimeMillis();
 		// print param on console. for test
 		printCreatePostParam(file, senderId, content, grouprecivers,
 				memberrecivers, type.toString());
@@ -134,6 +135,9 @@ public class MobileController extends JapidController {
 		} else {
 			response = MobileResponse.createFail("你尚未登陆");
 		}
+
+		System.out.println("use time:"
+				+ (System.currentTimeMillis() - beginTime));
 		renderJSON(response);
 	}
 
@@ -177,12 +181,14 @@ public class MobileController extends JapidController {
 		RichPost richPost = RichPost.findById(postId);
 		if (null != richPost) {
 			mobileResponse = MobileResponse.createSucc();
+			List<RichPostReply> richPostReplies = RichPostReply.find("topic",
+					richPost).fetch(pno, psize);
 			mobileResponse.result.put("replyList",
-					RichPostReply.find("topic", richPost).fetch());
+					ReplyVo.getListFromRichPostReplys(richPostReplies));
 		} else {
 			mobileResponse = MobileResponse.createFail("请求的数据出错了");
 		}
-		System.out.println("replyList:" + mobileResponse);
+		System.out.println("postId，replyList:" + postId + "," + mobileResponse);
 		renderJSON(mobileResponse);
 	}
 
@@ -193,6 +199,19 @@ public class MobileController extends JapidController {
 				psize);
 		mobileResponse.result.put("newReplyList",
 				RichPostVo.getRichPostVoListFromRichPosts(richPosts, 1));
+		renderJSON(mobileResponse);
+	}
+
+	public static void createReply(Long uid, Long postId, String content) {
+		Member member = Member.findById(uid);
+		RichPost post = RichPost.findById(postId);
+		MobileResponse mobileResponse = null;
+		if (member != null && post != null) {
+			mobileResponse = MobileResponse.createSucc();
+			RichPostReply.createRichPostReply(member, post, content);
+		} else {
+			mobileResponse = MobileResponse.createFail("你没有回复的权限");
+		}
 		renderJSON(mobileResponse);
 	}
 

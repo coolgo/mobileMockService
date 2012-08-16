@@ -1,9 +1,54 @@
+####member
+Teacher(t01):
+     fullName: test1
+     username: test1
+     avatar: http://www.iclass.com/public/img/defaultAvatar/thi_ava7.png
+     pwd: 111111
+     email: test1@163.com
+     phoneNum: 13058969471
+     isRemind: true
+     hasRelativeAccount: true
+     createTime: 2012-3-6               
+     
+Teacher(t02):
+    fullName: test2
+    username: test2
+    avatar: http://www.iclass.com/public/img/defaultAvatar/thi_ava8.png    
+    pwd: 111111
+    email: test2@163.com
+    phoneNum: 13058969472
+    isRemind: true
+    hasRelativeAccount: false
+    createTime: 2012-3-7
+
+Parent(p03):
+    fullName: test3
+    username: test3
+    pwd: 111111
+    avatar: http://www.iclass.com/public/img/defaultAvatar/thi_ava4.png      
+    email: test3@163.com
+    phoneNum: 13058969473
+    isRemind: true
+    hasRelativeAccount: true
+    createTime: 2012-3-8
+
+Parent(p04):
+    fullName: test4
+    username: test4
+    avatar: http://www.iclass.com/public/img/defaultAvatar/thi_ava1.png      
+    pwd: 111111
+    email: test4@163.com
+    phoneNum: 13058969474
+    isRemind: true
+    hasRelativeAccount: false
+    createTime: 2012-3-9 
+
+
+
 #richpost
-RichPost(29144) :
+RichPost(post01) :
     postType : "PostPhoto"
-    poster : "忻海"
-    posterId : 30
-    avatar : "http://www.iclass.com/picserver/20120528-122953805.jpg"
+    creater: t01
     receivers : "爱班公司内部职员群"
     content : "上周2012.06.04-2012.06.08工作总结，请大家参考。 "
     replyCount : -1
@@ -12,59 +57,50 @@ RichPost(29144) :
     imageW : 1649
     imageH : 750
 
-RichPost(29108) :
+RichPost(post02) :
     postType : "PostPhoto"
-    poster : "陈岑"
-    posterId : 649
-    avatar : "/public/img/defaultAvatar/sec_ava1.png"
+    creater: t02    
     receivers : "爱班网交流群"
     content : "#爱班网#大多数妈妈在教育男孩的时候，都会采取吼叫的方式，一是源于说话习惯，二是追求震撼性的教育效果。但是，吼叫教育不仅会给男孩带来恐慌，也会严重挫伤他的自尊心，对于男孩的成长与发展没有任何好处。而“不吼不叫”是可以有效激发男孩发挥各种潜力的最佳教育方式,是妈妈必须掌握的教育智慧。"
     replyCount : -1
-    createTime : "2012-06-11"
+    createTime : "2012-06-12"
     imageUrl : "http://www.iclass.com/picserver/20120611-110330412.jpg"
     imageW : 774
     imageH : 595
 
-RichPost(29018) :
+RichPost(post03) :
     postType : "PostPhoto"
-    poster : "尤靖波"
-    posterId : 860
-    avatar : "/public/img/defaultAvatar/fir_ava10.png"
+    creater:  t02
     receivers : "测试群组,尤靖波爸爸"
     content : "2"
     replyCount : -1
-    createTime : "2012-06-11"
+    createTime : "2012-06-13"
     imageUrl : "http://www.iclass.com/picserver/20120611-100902692.jpg"
     imageW : 398
     imageH: 818
 
-RichPost(28999) :
+RichPost(post04) :
     postType : "PostMessage"
-    poster : "尤靖波"
-    posterId : 860
-    avatar : "/public/img/defaultAvatar/fir_ava10.png"
+    creater:  t01    
     receivers : "测试群组"
-    content : "6月11号啦"
+    content : "6月14号啦"
     replyCount : -1
-    createTime : "2012-06-11"
+    createTime : "2012-06-14"
     imageUrl :
+
         
 ###reply
 RichPostReply(reply1) :
-    replyer: coolgo
-    replyId: 123
-    avatar: http://www.iclass.com/public/img/defaultAvatar/sec_ava4.png
+    creater: t02
     content: this is test data
-    createTime : "2012-06-11"
-    topic: 29108
+    createTime : "2012-06-12"
+    topic: post01
 
 RichPostReply(reply2) :
-    replyer: penpen
-    replyId: 345
-    avatar: http://www.iclass.com/public/img/defaultAvatar/sec_ava9.png
-    content: this is test data
-    createTime : "2012-06-11"
-    topic: 29108 
+    creater: t01
+    content: thanks for your reply
+    createTime : "2012-06-13"
+    topic: post01 
          
    
                                

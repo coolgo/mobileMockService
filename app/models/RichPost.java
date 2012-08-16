@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -17,17 +18,17 @@ import play.db.jpa.Model;
 public class RichPost extends Model {
 	@Enumerated(EnumType.STRING)
 	public PostType postType;
-	public String poster;
-	public Long posterId;
-	public String avatar;
+
 	public String receivers;
 	public String content;
 	public String imageUrl;
 	public Integer imageW;
 	public Integer imageH;
-	public Integer replyCount;
 	@Temporal(TemporalType.TIMESTAMP)
 	public Date createTime;
+
+	@ManyToOne
+	public Member creater;
 
 	public RichPost() {
 	}
@@ -38,7 +39,7 @@ public class RichPost extends Model {
 
 	public static List<RichPost> fetchRichPostsForPaging(Long memberId,
 			Date lastUpdateDate, Integer psize) {
-		String hql = "select post  from RichPost post where createTime<=? order by createTime desc ";
+		String hql = "select post  from RichPost post where createTime<? order by createTime desc ";
 		return RichPost.find(hql, lastUpdateDate).fetch(psize);
 	}
 
@@ -50,13 +51,10 @@ public class RichPost extends Model {
 		rp.imageH = imgSize.hight;
 		rp.imageW = imgSize.width;
 		rp.createTime = new Date();
-		rp.avatar = creater.avatar;
-		rp.posterId = creater.id;
+		rp.creater = creater;
 		rp.receivers = "group:" + grouprecivers + ", member:" + memberrecivers;
 		rp.postType = postType;
 		rp.content = content;
-		rp.poster = creater.fullName;
-		rp.replyCount = 0;
 		rp.createTime = new Date();
 		rp.save();
 	}
