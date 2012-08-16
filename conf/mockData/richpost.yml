@@ -71,7 +71,7 @@ RichPost(post02) :
 RichPost(post03) :
     postType : "PostPhoto"
     creater:  t02
-    receivers : "测试群组,尤靖波爸爸"
+    receivers : "测试群组,尤靖波爸爸,测试群组,尤靖波爸爸,测试群组,尤靖波爸爸,测试群组,尤靖波爸爸,测试群组,尤靖波爸爸"
     content : "2"
     replyCount : -1
     createTime : "2012-06-13"
