@@ -1,5 +1,8 @@
 package jsonvo.mobileVo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import models.Member;
 
 public class MemberVo extends BaseMobileVo {
@@ -8,7 +11,6 @@ public class MemberVo extends BaseMobileVo {
 	public String username;
 	public String nameTitle;
 	public String avatar;
-	public String pwd;
 	public String email;
 	public String phoneNum;
 	public boolean isRemind;
@@ -24,7 +26,6 @@ public class MemberVo extends BaseMobileVo {
 		vo.fullName = member.fullName;
 		vo.nameTitle = member.getNameTileOfMember();
 		vo.avatar = member.avatar;
-		vo.pwd = member.pwd;
 		vo.email = member.email;
 		vo.phoneNum = member.phoneNum;
 		vo.isRemind = member.isRemind;
@@ -32,6 +33,15 @@ public class MemberVo extends BaseMobileVo {
 		vo.relativeAccount = member.relativeAccount;
 		vo.createTime = member.createTime.getTime();
 		return vo;
+	}
+
+	public static List<MemberVo> getMemberVosFromMemberList(
+			List<Member> memberList) {
+		List<MemberVo> memberVos = new ArrayList<MemberVo>();
+		for (Member member : memberList) {
+			memberVos.add(memberVoFromMember(member));
+		}
+		return memberVos;
 	}
 
 }

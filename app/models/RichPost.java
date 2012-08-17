@@ -52,10 +52,31 @@ public class RichPost extends Model {
 		rp.imageW = imgSize.width;
 		rp.createTime = new Date();
 		rp.creater = creater;
-		rp.receivers = "group:" + grouprecivers + ", member:" + memberrecivers;
+		rp.receivers = getReceiversByGroupAndMember(grouprecivers,
+				memberrecivers);
 		rp.postType = postType;
 		rp.content = content;
 		rp.createTime = new Date();
 		rp.save();
+	}
+
+	private static String getReceiversByGroupAndMember(
+			List<Long> grouprecivers, List<Long> memberrecivers) {
+		StringBuffer sb = new StringBuffer();
+
+		for (int i = 0; i < grouprecivers.size(); i++) {
+			GenericGroup g = GenericGroup.findById(grouprecivers.get(i));
+			sb.append(g.groupName).append(",");
+		}
+
+		for (int i = 0; i < memberrecivers.size(); i++) {
+			Member m = Member.findById(memberrecivers.get(i));
+			sb.append(m.fullName);
+			if (i != memberrecivers.size() - 1) {
+				sb.append(",");
+			}
+		}
+		return sb.toString();
+
 	}
 }

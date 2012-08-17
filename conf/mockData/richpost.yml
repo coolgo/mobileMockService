@@ -21,6 +21,28 @@ Teacher(t02):
     hasRelativeAccount: false
     createTime: 2012-3-7
 
+Teacher(t03):
+    fullName: 李磊 
+    username: lilei
+    avatar: http://www.iclass.com/public/img/defaultAvatar/fir_ava11.png    
+    pwd: 111111
+    email: lilei@gmail.com
+    phoneNum: 13058968741
+    isRemind: false
+    hasRelativeAccount: false
+    createTime: 2012-3-8    
+
+Teacher(t04):
+    fullName: 韩梅梅 
+    username: hmm
+    avatar: http://www.iclass.com/public/img/defaultAvatar/fir_ava2.png    
+    pwd: 111111
+    email: hanmeimei@gmail.com
+    phoneNum: 13058968742
+    isRemind: false
+    hasRelativeAccount: false
+    createTime: 2012-3-8
+
 Parent(p03):
     fullName: test3
     username: test3
@@ -132,7 +154,71 @@ RichPostReply(reply2-5) :
     creater: t01
     content: "best wish for you"
     createTime : "2012-06-17"
-    topic: post02                   
+    topic: post02
+    
+
+###GenericGroup
+
+GenericGroup(g01) :
+    r: 801
+    g: 1731
+    b: 271
+    groupName: 2011级西瓜班
+
+GenericGroup(g02) :
+    r: 1711
+    g: 1111
+    b: 281
+    groupName: 2012级香蕉班
+
+GenericGroup(g03) :
+    r: 801
+    g: 211
+    b: 641
+    groupName: 2012级草莓班
+
+GenericGroup(g04) :
+    r: 500
+    g: 500
+    b: 500
+    groupName: 2012级海绵宝宝班           
+    
+####GenericGroup_Member
+
+GenericGroup_Member(g_m1):
+    genericGroup: g01
+    groupMember: t01
+
+GenericGroup_Member(g_m2):
+    genericGroup: g01
+    groupMember: t02    
+
+GenericGroup_Member(g_m3):
+    genericGroup: g01
+    groupMember: t03
+
+GenericGroup_Member(g_m4):
+    genericGroup: g01
+    groupMember: t01
+
+GenericGroup_Member(g_m5):
+    genericGroup: g02
+    groupMember: t01
+
+GenericGroup_Member(g_m6):
+    genericGroup: g03
+    groupMember: t02    
+
+GenericGroup_Member(g_m7):
+    genericGroup: g03
+    groupMember: t03
+
+GenericGroup_Member(g_m8):
+    genericGroup: g04
+    groupMember: t04    
+
+
+                       
      
          
    
