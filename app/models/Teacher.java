@@ -10,4 +10,9 @@ public class Teacher extends Member {
 
 	public Teacher() {
 	}
+
+	@Override
+	public String getNameTileOfMember() {
+		return "家长";
+	}
 }

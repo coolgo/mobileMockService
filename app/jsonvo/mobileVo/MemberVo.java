@@ -6,6 +6,7 @@ public class MemberVo extends BaseMobileVo {
 	public String dtype;
 	public String fullName;
 	public String username;
+	public String nameTitle;
 	public String avatar;
 	public String pwd;
 	public String email;
@@ -21,6 +22,7 @@ public class MemberVo extends BaseMobileVo {
 		vo.dtype = member.getClass().getSimpleName();
 		vo.username = member.username;
 		vo.fullName = member.fullName;
+		vo.nameTitle = member.getNameTileOfMember();
 		vo.avatar = member.avatar;
 		vo.pwd = member.pwd;
 		vo.email = member.email;

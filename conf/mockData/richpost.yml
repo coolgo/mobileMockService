@@ -90,17 +90,50 @@ RichPost(post04) :
 
         
 ###reply
-RichPostReply(reply1) :
+RichPostReply(reply1-1) :
     creater: t02
     content: this is test data
     createTime : "2012-06-12"
     topic: post01
 
-RichPostReply(reply2) :
+RichPostReply(reply1-2) :
     creater: t01
     content: thanks for your reply
     createTime : "2012-06-13"
-    topic: post01 
+    topic: post01
+
+
+
+RichPostReply(reply2-1) :
+    creater: t01
+    content: "wa ,this is a good website"
+    createTime : "2012-06-13"
+    topic: post02
+
+RichPostReply(reply2-2) :
+    creater: t01
+    content: "thank you "
+    createTime : "2012-06-14"
+    topic: post012
+
+RichPostReply(reply2-2) :
+    creater: t01
+    content: "but it has more disadvantages than advantage"
+    createTime : "2012-06-15"
+    topic: post02
+
+RichPostReply(reply2-3) :
+    creater: t02
+    content:"ok,we will do our best"
+    createTime : "2012-06-16"
+    topic: post02 
+
+RichPostReply(reply2-4) :
+    creater: t01
+    content: "best wish for you"
+    createTime : "2012-06-17"
+    topic: post02                   
+     
          
    
                                

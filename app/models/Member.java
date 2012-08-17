@@ -26,4 +26,6 @@ public abstract class Member extends Model {
 	@Temporal(TemporalType.TIMESTAMP)
 	public Date createTime;
 
+	public abstract String getNameTileOfMember();
+
 }
