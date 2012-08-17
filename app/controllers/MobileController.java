@@ -5,8 +5,8 @@ import java.util.Date;
 import java.util.List;
 
 import jsonvo.MobileResponse;
+import jsonvo.mobileVo.GenericGroupVo;
 import jsonvo.mobileVo.MemberVo;
-import jsonvo.mobileVo.ReciverVo;
 import jsonvo.mobileVo.ReplyVo;
 import jsonvo.mobileVo.RichPostVo;
 import jsonvo.mobileVo.RichPostVo.ImageSize;
@@ -143,9 +143,8 @@ public class MobileController extends JapidController {
 
 	public static void linkmanList(Long uid) {
 		System.out.println("linkman be invoke, uid=" + uid);
-		List<ReciverVo> result = ReciverVo.createTestData();
 		MobileResponse response = MobileResponse.createSucc();
-		response.result.put("groupList", result);
+		response.result.put("groupList", GenericGroupVo.getGroupVoList());
 		renderJSON(response);
 	}
 
