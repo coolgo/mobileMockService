@@ -201,6 +201,8 @@ public class MobileController extends JapidController {
 	}
 
 	public static void createReply(Long uid, Long postId, String content) {
+		System.out.println("create reply invoke:uid=" + uid + ", postId="
+				+ postId + ", content=" + content);
 		Member member = Member.findById(uid);
 		RichPost post = RichPost.findById(postId);
 		MobileResponse mobileResponse = null;
