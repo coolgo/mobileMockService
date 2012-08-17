@@ -48,8 +48,10 @@ public class RichPost extends Model {
 			List<Long> grouprecivers, List<Long> memberrecivers) {
 		RichPost rp = new RichPost();
 		rp.imageUrl = fileUrl;
-		rp.imageH = imgSize.hight;
-		rp.imageW = imgSize.width;
+		if (imgSize != null) {
+			rp.imageH = imgSize.hight;
+			rp.imageW = imgSize.width;
+		}
 		rp.createTime = new Date();
 		rp.creater = creater;
 		rp.receivers = getReceiversByGroupAndMember(grouprecivers,

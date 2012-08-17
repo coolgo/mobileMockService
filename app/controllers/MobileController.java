@@ -114,7 +114,7 @@ public class MobileController extends JapidController {
 			PostType type, @As(value = ",") List<Long> grouprecivers,
 			@As(value = ",") List<Long> memberrecivers) {
 		long beginTime = System.currentTimeMillis();
-		// print param on console. for test
+
 		printCreatePostParam(file, senderId, content, grouprecivers,
 				memberrecivers, type.toString());
 		MobileResponse response = null;
