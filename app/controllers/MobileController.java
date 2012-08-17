@@ -113,7 +113,6 @@ public class MobileController extends JapidController {
 	public static void createPost(File file, Long senderId, String content,
 			PostType type, @As(value = ",") List<Long> grouprecivers,
 			@As(value = ",") List<Long> memberrecivers) {
-		System.out.println("fileName:" + file.getName());
 		long beginTime = System.currentTimeMillis();
 		// print param on console. for test
 		printCreatePostParam(file, senderId, content, grouprecivers,
