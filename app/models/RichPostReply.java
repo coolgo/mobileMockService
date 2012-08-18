@@ -25,17 +25,18 @@ public class RichPostReply extends Model {
 	public RichPostReply() {
 	}
 
-	public static List<RichPost> fetchRichPostHasReply(Long uid, Integer psize) {
-		String hql = "select post from RichPostReply r, RichPost post where post=r.topic  group by post order by post.createTime desc ";
-		return RichPost.find(hql).fetch(psize);
-	}
-
 	public static List<RichPostReply> fetchPostRepliesByPost(RichPost post,
 			Integer maxSize) {
 
 		return RichPostReply
-				.find("select from RichPostReply r where r.topic=? order by r.createTime desc",
+				.find("select r from RichPostReply r where r.topic=? order by r.createTime desc",
 						post).fetch(maxSize);
+	}
+
+	public static List<RichPostReply> fetchPostReplies(Integer maxSize) {
+		return RichPostReply.find(
+				"select r from RichPostReply r order by r.createTime desc ")
+				.fetch(maxSize);
 	}
 
 	public static Long countReplyByPost(RichPost post) {

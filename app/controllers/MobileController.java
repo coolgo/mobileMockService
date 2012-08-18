@@ -194,10 +194,10 @@ public class MobileController extends JapidController {
 	public static void newReplyList(Long uid, Long lastUpdateTime, Integer psize) {
 		psize = psize != null ? psize : PSIZE;
 		MobileResponse mobileResponse = MobileResponse.createSucc();
-		List<RichPost> richPosts = RichPostReply.fetchRichPostHasReply(uid,
-				psize);
+		List<RichPostReply> richPostReplies = RichPostReply
+				.fetchPostReplies(psize);
 		mobileResponse.result.put("newReplyList",
-				RichPostVo.getRichPostVoListFromRichPosts(richPosts, 1));
+				RichPostVo.richPostVosFromRichPostReply(richPostReplies));
 		renderJSON(mobileResponse);
 	}
 

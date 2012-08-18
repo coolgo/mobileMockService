@@ -49,9 +49,11 @@ public class RichPostVo extends BaseMobileVo {
 	public static RichPostVo richPostVoFromRichPost(RichPost post,
 			Integer maxReplyNum) {
 		RichPostVo vo = richPostVoFromRichPostWithoutReply(post);
-		List<RichPostReply> richPostReplies = RichPostReply.find("topic", post)
-				.fetch(maxReplyNum);
-		vo.replyList = ReplyVo.getListFromRichPostReplys(richPostReplies);
+		if (maxReplyNum > 0) {
+			List<RichPostReply> richPostReplies = RichPostReply.find("topic",
+					post).fetch(maxReplyNum);
+			vo.replyList = ReplyVo.getListFromRichPostReplys(richPostReplies);
+		}
 		return vo;
 	}
 
@@ -91,4 +93,20 @@ public class RichPostVo extends BaseMobileVo {
 		return richPostVos;
 	}
 
+	public static RichPostVo richPostVoFromReply(RichPostReply reply) {
+		RichPostVo richPostVo = new RichPostVo();
+		richPostVo = richPostVoFromRichPost(reply.topic, 0);
+		richPostVo.replyList = new ArrayList<ReplyVo>();
+		richPostVo.replyList.add(ReplyVo.replyVoFromRichPostReply(reply));
+		return richPostVo;
+	}
+
+	public static List<RichPostVo> richPostVosFromRichPostReply(
+			List<RichPostReply> replies) {
+		List<RichPostVo> postVos = new ArrayList<RichPostVo>();
+		for (RichPostReply r : replies) {
+			postVos.add(RichPostVo.richPostVoFromReply(r));
+		}
+		return postVos;
+	}
 }

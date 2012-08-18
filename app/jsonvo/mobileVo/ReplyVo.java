@@ -35,4 +35,5 @@ public class ReplyVo extends BaseMobileVo {
 		}
 		return replyVos;
 	}
+
 }
