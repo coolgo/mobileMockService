@@ -30,6 +30,14 @@ public class RichPostReply extends Model {
 		return RichPost.find(hql).fetch(psize);
 	}
 
+	public static List<RichPostReply> fetchPostRepliesByPost(RichPost post,
+			Integer maxSize) {
+
+		return RichPostReply
+				.find("select from RichPostReply r where r.topic=? order by r.createTime desc",
+						post).fetch(maxSize);
+	}
+
 	public static Long countReplyByPost(RichPost post) {
 		return RichPostReply.count("topic", post);
 	}

@@ -37,7 +37,8 @@ public class MobileController extends JapidController {
 		MobileResponse reponse = null;
 		if (first != null) {
 			reponse = MobileResponse.createSucc();
-			reponse.result.put("loginMember", first);
+			reponse.result.put("loginMember",
+					MemberVo.memberVoFromMember(first));
 		} else {
 			reponse = MobileResponse.createFail("用户名或密码错误");
 		}
@@ -122,7 +123,7 @@ public class MobileController extends JapidController {
 		if (creater != null) {
 			response = MobileResponse.createSucc();
 			String fileUrl = null;
-			ImageSize imgSize = null;
+			ImageSize imgSize = new ImageSize();
 			if (file != null) {
 
 				fileUrl = PictureUploadUtil.uploadFileWithPngImage(file);
@@ -179,8 +180,8 @@ public class MobileController extends JapidController {
 		RichPost richPost = RichPost.findById(postId);
 		if (null != richPost) {
 			mobileResponse = MobileResponse.createSucc();
-			List<RichPostReply> richPostReplies = RichPostReply.find("topic",
-					richPost).fetch(pno, psize);
+			List<RichPostReply> richPostReplies = RichPostReply
+					.fetchPostRepliesByPost(richPost, psize);
 			mobileResponse.result.put("replyList",
 					ReplyVo.getListFromRichPostReplys(richPostReplies));
 		} else {
