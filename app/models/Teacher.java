@@ -13,6 +13,6 @@ public class Teacher extends Member {
 
 	@Override
 	public String getNameTileOfMember() {
-		return "家长";
+		return "老师";
 	}
 }
