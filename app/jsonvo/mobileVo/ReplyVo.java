@@ -3,9 +3,12 @@ package jsonvo.mobileVo;
 import japidviews._javatags.CommonUtils;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import models.RichPostReply;
+
+import org.apache.commons.lang.time.DateUtils;
 
 public class ReplyVo extends BaseMobileVo {
 	public String replyer;
@@ -24,6 +27,9 @@ public class ReplyVo extends BaseMobileVo {
 		vo.content = reply.content;
 		vo.replyTime = CommonUtils.getPassTime(reply.createTime);
 		vo.createTime = reply.createTime.getTime();
+		if (DateUtils.isSameDay(new Date(), reply.createTime)) {
+			vo.isNew = true;
+		}
 		return vo;
 	}
 
