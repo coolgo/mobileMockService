@@ -26,7 +26,7 @@ public class Application extends JapidController {
 
 	public static void fillData(Boolean clean) {
 		if (isProcessing) {
-			renderJapidWith("Application/index.html", "系统正在加载中",
+			renderJapidWith("Application/init.html", "系统正在加载中",
 					new ArrayList<String>());
 		}
 
@@ -37,14 +37,14 @@ public class Application extends JapidController {
 		loadedYml = new ArrayList<String>();
 		putYMLToDB(Play.configuration.getProperty("mockdata.location"));
 		isProcessing = false;
-		renderJapidWith("Application/index.html", "", loadedYml);
+		renderJapidWith("Application/init.html", "", loadedYml);
 	}
 
 	public static void clearDb() {
 		Fixtures.deleteDatabase();
 		loadedYml = new ArrayList<String>();
 		isProcessing = false;
-		renderJapidWith("Application/index.html", "", loadedYml);
+		renderJapidWith("Application/init.html", "", loadedYml);
 	}
 
 	protected static void putYMLToDB(String rootPath) {
