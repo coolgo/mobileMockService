@@ -160,27 +160,27 @@ RichPostReply(reply2-5) :
 ###GenericGroup
 
 GenericGroup(g01) :
-    r: 801
-    g: 1731
-    b: 271
+    r: 80
+    g: 173
+    b: 71
     groupName: 2011级西瓜班
 
 GenericGroup(g02) :
-    r: 1711
-    g: 1111
-    b: 281
+    r: 171
+    g: 111
+    b: 28
     groupName: 2012级香蕉班
 
 GenericGroup(g03) :
-    r: 801
+    r: 80
     g: 211
-    b: 641
+    b: 64
     groupName: 2012级草莓班
 
 GenericGroup(g04) :
-    r: 500
-    g: 500
-    b: 500
+    r: 50
+    g: 50
+    b: 50
     groupName: 2012级海绵宝宝班           
     
 ####GenericGroup_Member
