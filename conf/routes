@@ -11,6 +11,7 @@ GET     /                                       Application.index
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
 
+*        /init/db                         Application.init
 *        /init/cleardb                    Application.clearDb
 
 #sms mobile service

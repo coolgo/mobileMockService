@@ -12,6 +12,11 @@ import cn.bran.play.JapidController;
 public class Application extends JapidController {
 
 	public static void index() {
+
+		renderJapid();
+	}
+
+	public static void init() {
 		renderJapid("", loadedYml);
 	}
 

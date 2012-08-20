@@ -1,30 +1,22 @@
-`extends "SampleLayout.html"
-
-`(String errinfo, List<String> loadedYml)
-
-`set title:"initdb" 
-<script>
-
-function initdbClick(){
-	window.location.href="/Application/fillData?clean=true";
-}
-
-function cleardb(){
-	window.location.href="/Application/clearDb";
-}
-
-</script>
-${errinfo ?: ""}
-<button onclick="initdbClick()">init db</button>
-*{<button onclick="cleardb()">clear db</button>}*
-<a target="_blank" href="/Application/mockservice">测试mock服务</a>
-<p>
-`for String f : loadedYml
-	${f}
-	`t SampleTag(f) 
-	<br>
-`
-</p>
-
-
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>建设中</title>
+</head>
+<body>
+	<div style="margin-top:50px;padding-top:15px;">
+        <div style="width:700px;margin:0 auto;background-color:#EEF3F8;">
+            <div style="padding:10px;">
+                <div style="position:relative;border:1px solid #C4D3EA;height:345px;background:url(http://www.iclass.com/public/img/exception/maintain.png) white no-repeat">
+                    <div style="color: #555;position: absolute;top: 110px;left: 90px;">
+                    	<p style="font-size:20px;font-weight:bold;">非常抱歉，该网站目前只支持手机访问</p>
+                    	<p style="margin:20px 0 5px 0;">想了解最新的爱班动态，请进入新浪微博！</p>
+                    	<p><iframe width="63" height="24" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0" scrolling="no" border="0" src="http://widget.weibo.com/relationship/followbutton.php?language=zh_cn&width=63&height=24&uid=2709811322&style=1&btn=red&dpc=1"></iframe></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
