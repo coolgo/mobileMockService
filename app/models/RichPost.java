@@ -66,17 +66,21 @@ public class RichPost extends Model {
 			List<Long> grouprecivers, List<Long> memberrecivers) {
 
 		StringBuffer sb = new StringBuffer();
-		for (Long gid : grouprecivers) {
-			if (null != gid) {
-				GenericGroup g = GenericGroup.findById(gid);
-				sb.append(g.groupName).append(",");
+		if (null != grouprecivers) {
+			for (Long gid : grouprecivers) {
+				if (null != gid) {
+					GenericGroup g = GenericGroup.findById(gid);
+					sb.append(g.groupName).append(",");
+				}
 			}
 		}
 
-		for (Long mid : memberrecivers) {
-			if (null != mid) {
-				Member m = Member.findById(mid);
-				sb.append(m.fullName).append(",");
+		if (null != memberrecivers) {
+			for (Long mid : memberrecivers) {
+				if (null != mid) {
+					Member m = Member.findById(mid);
+					sb.append(m.fullName).append(",");
+				}
 			}
 		}
 
