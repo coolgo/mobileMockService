@@ -25,7 +25,8 @@ public class ReplyVo extends BaseMobileVo {
 		vo.replyerId = reply.creater.id;
 		vo.avatar = reply.creater.avatar;
 		vo.content = reply.content;
-		vo.replyTime = CommonUtils.getPassTime(reply.createTime);
+		vo.replyTime = CommonUtils
+				.getPassTimeForMobileService(reply.createTime);
 		vo.createTime = reply.createTime.getTime();
 		if (DateUtils.isSameDay(new Date(), reply.createTime)) {
 			vo.isNew = true;

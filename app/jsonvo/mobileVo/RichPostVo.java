@@ -79,7 +79,7 @@ public class RichPostVo extends BaseMobileVo {
 			vo.previewImgHeight = imgeSize.hight;
 			vo.previewImgWidth = imgeSize.width;
 		}
-		vo.postTime = CommonUtils.getPassTime(post.createTime);
+		vo.postTime = CommonUtils.getPassTimeForMobileService(post.createTime);
 		vo.createTime = post.createTime.getTime();
 		return vo;
 	}

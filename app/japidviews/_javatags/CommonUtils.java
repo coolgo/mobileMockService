@@ -124,4 +124,38 @@ public class CommonUtils {
 		return weekDays[c.get(Calendar.DAY_OF_WEEK)];
 	}
 
+	/**
+	 * 
+	 * @author coolgo(winerdaxian@163.com)
+	 * 
+	 * @param date
+	 * @return
+	 */
+	public static String getPassTimeForMobileService(Date date) {
+		Date now = new Date();
+		if (now.before(date)) {
+			return "";
+		}
+		long delta = (now.getTime() - date.getTime()) / 1000;
+		if (delta < 60) {
+			return delta + "秒前";
+		}
+		if (delta < 60 * 60) {
+			long minutes = delta / 60;
+			return minutes + "分钟前";
+		}
+		if (delta < 24 * 60 * 60) {
+			long hours = delta / (60 * 60);
+			return hours + "小时前";
+		}
+		if (delta < 4 * 24 * 60 * 60) {
+			long days = delta / (24 * 60 * 60);
+			return days + "天前";
+		}
+		if (DateUtils.truncatedEquals(date, now, Calendar.YEAR)) {
+			return formatDate(date, "MM-dd");
+		}
+		return formatDate(date, "yyyy-MM");
+	}
+
 }
