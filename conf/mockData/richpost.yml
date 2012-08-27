@@ -1,6 +1,6 @@
 ####member
 Teacher(t01):
-     fullName: test1
+     fullName: 林涛
      username: test1
      avatar: http://www.iclass.com/public/img/defaultAvatar/thi_ava7.png
      pwd: 111111
@@ -11,7 +11,7 @@ Teacher(t01):
      createTime: 2012-3-6               
      
 Teacher(t02):
-    fullName: test2
+    fullName: 林妹妹
     username: test2
     avatar: http://www.iclass.com/public/img/defaultAvatar/thi_ava8.png    
     pwd: 111111
@@ -44,7 +44,7 @@ Teacher(t04):
     createTime: 2012-3-8
 
 Parent(p03):
-    fullName: test3
+    fullName: 小明
     username: test3
     pwd: 111111
     avatar: http://www.iclass.com/public/img/defaultAvatar/thi_ava4.png      
@@ -55,7 +55,7 @@ Parent(p03):
     createTime: 2012-3-8
 
 Parent(p04):
-    fullName: test4
+    fullName: 东东
     username: test4
     avatar: http://www.iclass.com/public/img/defaultAvatar/thi_ava1.png      
     pwd: 111111
