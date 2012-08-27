@@ -125,7 +125,7 @@ public class MobileController extends JapidController {
 			String fileUrl = null;
 			ImageSize imgSize = new ImageSize();
 			if (file != null) {
-				if (file.length() > 150000 * 4 - 100) {
+				if (file.length() > 150000 * 4 - 100) { // 根据ios端的限制，暂时做的修改 TODO
 					file = PictureUploadUtil.cutPicReduce(file, 480, 640);
 				}
 				fileUrl = PictureUploadUtil.uploadFileWithPngImage(file);
